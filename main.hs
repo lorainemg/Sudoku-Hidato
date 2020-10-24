@@ -28,8 +28,11 @@ showBoard board = showCells cellList 0 0 (length cellList) (length line) maxSpac
 -------------------------- Returns the cells in a String --------------------------
 showCells :: [[Integer]] -> Int -> Int-> Int-> Int -> Int -> String
 showCells cellList pRow pCol endRow endCol maxSpace
-    | pRow == endRow = ""
-    | pCol == endCol = "\n" ++ showCells cellList (pRow + 1) 0 endRow (length line) maxSpace
+    -- Si ya se llegó a la última fila entonces ya se terminó de generar el tablero
+    | pRow == endRow = ""					
+    -- Si ya se llega a la última columna entonces se pone una línea nueva y se pasa a la siguiente fila
+    | pCol == endCol = "\n" ++ showCells cellList (pRow + 1) 0 endRow (length line) maxSpace	
+    -- En otro caso simplemente se pone el elemento en la posición actual precedido por espacios
     | otherwise = spaces ++ elem ++ showCells cellList pRow (pCol + 1) endRow endCol maxSpace
         where 
             line = cellList !! (pRow + 1)
