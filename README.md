@@ -2,7 +2,7 @@
 
 Hidato Sudoku is a board with several numbers placed on it and some blank squares. The smallest number will always be 1 and the largest will coincide with the number of squares on the board, both will always be present on the board. The goal is to fill it with consecutive numbers that connect horizontally, vertically, or diagonally, thus forming a sequence of numbers starting with 1 that are immediately connected. For each number, its predecessor and its successor will be in some adjacent box.
 
-In this project, an agent that resolves Hidato and another that generates it is implemented. The project is written in Haskell. A full report on the project can be found at: https://github.com/lorainemg/Sudoku-Hidato/blob/main/doc/report.pdf
+In this project is implemented an agent that resolves Hidato and another that generates it. The project is written in Haskell. A full report of the project can be found at: https://github.com/lorainemg/Sudoku-Hidato/blob/main/doc/report.pdf
 
 
 
