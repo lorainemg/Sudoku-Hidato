@@ -1,13 +1,40 @@
 # Sudoku Hidato
 
-Hidato Sudoku is a board with several numbers placed on it and some blank squares. The smallest number will always be 1 and the largest will coincide with the number of squares on the board, both will always be present on the board. The goal is to fill it with consecutive numbers that connect horizontally, vertically, or diagonally, thus forming a sequence of numbers starting with 1 that are immediately connected. For each number, its predecessor and its successor will be in some adjacent box.
+Hidato Sudoku is a puzzle game where the goal is to fill a board with consecutive numbers that connect horizontally, vertically, or diagonally. The smallest number is 1, and the largest number corresponds to the total number of squares on the board. Each number’s predecessor and successor must be in adjacent squares.
 
-In this project is implemented an agent that resolves Hidato and another that generates it. The project is written in Haskell. A full report of the project can be found at: https://github.com/lorainemg/Sudoku-Hidato/blob/main/doc/report.pdf
+This project includes a solver and generator for Hidato puzzles, implemented in Haskell.
 
+## Features
 
+- **Generates** random Hidato puzzles.
+- **Solves** Hidato puzzles.
+- Written in **Haskell**.
 
-## Start the game
+## How to Run
 
-To start the game you have to open the Haskell compiler (in our case `ghci` was used) in the project directory and execute `:load main`, since `main.hs` is the main file. This file imports the `generate` and `solve` methods that were mentioned earlier. To call `generate` do: `board <- generate n m`, where `n` and `m` are any 2 numbers that represent the dimensions of the board. Since you're dealing with `randomRIO` numbers, the true return value of this method is `Board IO`, so you need to store the value in a variable before execution to access the value of `Board`.
+1. Open the Haskell compiler (`ghci`) in the project directory.
+2. Load the main file:
+   ```haskell
+   :load main
+   ```
+3. To generate a board with dimensions n and m, use:
+```haskell
+board <- generate n m
+```
+4. To solve the generated board, use:
+```haskell
+solve board
+```
+## Installation
+Make sure you have Haskell installed. You can run the following in your terminal to install it:
 
-Then, once you have the board, it's executed: `solve board`, `board` being the result obtained by executing the generator. This procedure can be executed repeatedly.
+``` bash
+sudo apt-get install haskell-platform
+```
+Clone the repository:
+```bash
+git clone https://github.com/lorainemg/Sudoku-Hidato.git
+cd Sudoku-Hidato
+```
+## Report
+For a detailed report on the project, please visit: [Report PDF](https://github.com/lorainemg/Sudoku-Hidato/blob/main/doc/report.pdf)
